@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Dark System – Órdenes de Servicio</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <img id="logoImg" src="logo.png" alt="Logo" style="height:60px;">
+  <h1>Órdenes de Servicio</h1>
+</header>
+
+<main>
+<section id="form-section">
+  <h2>Nueva / Editar Orden</h2>
+  <form id="orderForm">
+    <div class="row"><label>Folio:</label><input id="folio" readonly></div>
+    <fieldset><legend>Cliente</legend>
+      <div class="row"><label>Nombre:</label><input id="cliente" required></div>
+      <div class="row"><label>Teléfono:</label><input id="telefono"></div>
+    </fieldset>
+    <fieldset><legend>Equipo</legend>
+      <div class="row"><label>Modelo:</label><input id="modelo"></div>
+      <div class="row"><label>Serie:</label><input id="serie"></div>
+      <div class="row"><label>Accesorios:</label><input id="accesorios"></div>
+    </fieldset>
+    <div class="row"><label>Problema reportado:</label><textarea id="problema"></textarea></div>
+    <div class="row"><label>Observaciones:</label><textarea id="observaciones"></textarea></div>
+    <div class="row"><label>Fotos recepción:</label><input type="file" id="fotos" accept="image/*" multiple></div>
+    <div class="row"><label>Firma cliente (nombre):</label><input id="firma"></div>
+    <button type="submit">Guardar</button> <button type="reset" id="cancelarEdicion" style="display:none;">Cancelar</button>
+  </form>
+</section>
+
+<section id="historial-section">
+  <h2>Historial</h2>
+  <table id="historial"><thead><tr><th>Folio</th><th>Cliente</th><th>Fecha</th><th>Acciones</th></tr></thead><tbody></tbody></table>
+</section>
+</main>
+
+<!-- Configuración -->
+<div id="settings" class="panel">
+  <h2>Configuración</h2>
+  <label class="btn" for="logoInput" style="display:inline-block;padding:6px 12px;background:#ccc;border:1px solid #888;cursor:pointer;">Seleccionar logo</label>
+  <input type="file" id="logoInput" accept="image/*" style="display:none;"><br><br>
+  <button id="resetLogo">Restaurar logo por defecto</button>
+  <hr>
+  <label><b>Editar políticas (HTML):</b></label><br>
+  <textarea id="polTxt" rows="10" style="width:100%;"></textarea><br>
+  <button id="savePol">Guardar políticas</button>
+</div>
+<button id="openSettings" class="settings-btn">⚙️</button>
+
+<script src="script.js"></script>
+</body>
+</html>
